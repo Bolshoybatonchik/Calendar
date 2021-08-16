@@ -6,11 +6,17 @@ This is a simple application with which you can create, edit or delete notes for
 
 You need to download this project to run it locally. To run it, you have to install the dependencies and then run the application.
 
-###Main stack
+### Main stack
 
 The app is written in React using material UI and uses moment and react-modal
 
-#### Installing
+#### Demo
+
+You can also use the demo by clicking on this link
+
+(https://bolshoybatonchik.github.io/Calendar/)
+
+##### Installing
 
 ```
 npm install
