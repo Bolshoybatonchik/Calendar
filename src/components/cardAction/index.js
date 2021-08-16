@@ -8,6 +8,8 @@ import editIcon from "assets/edit.svg";
 import { useCardActionStyle } from "components/cardAction/styles";
 import EditModal from "../editModal";
 
+Modal.setAppElement('#root');
+
 const CardAction = ({item, updateData, selectDate, action}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalActionIsOpen, setModalActionIsOpen] = useState(false);
@@ -50,7 +52,7 @@ const CardAction = ({item, updateData, selectDate, action}) => {
         let data = getLocalStorage(`${item.year}-${item.month}`)
         data = data ? JSON.parse(data) : []
         data = data.map(day => {
-            const newDay = {...day}
+            const newDay = JSON.parse(JSON.stringify(day))
             if (day.id === item.id) {
                 newDay.actions = newDay.actions.map(elem => {
                     if (elem.id === action.id) {

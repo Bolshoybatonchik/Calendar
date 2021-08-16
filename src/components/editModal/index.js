@@ -5,6 +5,8 @@ import Modal from "react-modal";
 import { ReactComponent as CloseIcon } from "assets/close.svg";
 import { useEditModalAddStyle } from "components/editModal/style";
 
+Modal.setAppElement('#root');
+
 const EditModal = ({modalIsOpen,saveModal,closeModal,content,onChangeInput})=>{
     const classes = useEditModalAddStyle()
     return(

@@ -4,7 +4,9 @@ import Modal from 'react-modal';
 
 import { getLocalStorage, setLocalStorage } from "utils/localStorage";
 import { ReactComponent as CloseIcon } from "assets/close.svg";
-import { useCardAddStyle } from "components/cardAdd/styles";
+import { useCardAddStyle } from "./styles";
+
+Modal.setAppElement('#root');
 
 const CardAdd = ({item, updateData, selectDate, closeModal, modalIsOpen}) => {
     const [content, setContent] = useState('');
@@ -14,7 +16,7 @@ const CardAdd = ({item, updateData, selectDate, closeModal, modalIsOpen}) => {
         let data = getLocalStorage(`${item.year}-${item.month}`)
         data = data ? JSON.parse(data) : []
         data = data.map(day => {
-            const newDay = {...day}
+            const newDay = JSON.parse(JSON.stringify(day))
             if (day.id === item.id) {
                 newDay.actions.push({
                     id: new Date().getUTCMilliseconds(),
