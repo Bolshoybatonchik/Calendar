@@ -14,7 +14,7 @@ The app is written in React using material UI and uses moment and react-modal
 
 You can also use the demo by clicking on this link
 
-(https://bolshoybatonchik.github.io/Calendar/)
+https://bolshoybatonchik.github.io/Calendar/
 
 ##### Installing
 
